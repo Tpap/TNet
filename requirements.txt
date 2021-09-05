@@ -1,0 +1,9 @@
+
+tensorflow-gpu==2.4.0
+tensorflow-addons==0.12.1
+tensorboard==2.4.0
+tensorboard-plugin-profile==2.4.0
+Pillow==7.2.0
+scipy==1.4.1
+opencv-python==4.4.0.42
+pandas==1.0.1
