@@ -4,7 +4,7 @@ TensorFlow implementation of the work presented in "Hard-Attention for Scalable 
 
 ## ImageNet ILSVRC 2012
 
-### Converting data to TFRecords
+### Data preparation
 
 Follow instructions
 
