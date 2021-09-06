@@ -70,9 +70,7 @@ python train_bl.py --to_train
 Commands to replicate the training of the networks presented in the paper, can be found in `results_replication.txt`.
 
 The weights of the TNet model reported in the paper, can be downloaded [here](https://drive.google.com/uc?export=download&id=11xk3DqB_966XPZSGThTr6h-Rbm4sRGjJ). <br />
-or [here](https://drive.google.com/open?id=11xk3DqB_966XPZSGThTr6h-Rbm4sRGjJ)
-or <a href="https://docs.google.com/u/0/uc?export=download&confirm=4xUu&id=11xk3DqB_966XPZSGThTr6h-Rbm4sRGjJ" download>here</a> <br />
-The weights of the BagNet-77 baseline reported in the paper, can be downloaded [here](https://drive.google.com/file/d/120ek3sPJP8yKfD9EFf7qlV6siz5GVW5a/view?usp=sharing)
+The weights of the BagNet-77 baseline reported in the paper, can be downloaded [here](https://drive.google.com/uc?export=download&id=120ek3sPJP8yKfD9EFf7qlV6siz5GVW5a)
 
 ### Evaluation
 
