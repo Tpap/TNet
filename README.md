@@ -69,6 +69,9 @@ python train_bl.py --to_train
 
 Commands to replicate the training of the networks presented in the paper, can be found in `results_replication.txt`.
 
+The weights of the TNet model reported in the paper, can be downloaded [here](https://drive.google.com/file/d/11xk3DqB_966XPZSGThTr6h-Rbm4sRGjJ/view?usp=sharing). <br />
+The weights of the BagNet-77 baseline reported in the paper, can be downloaded here ...
+
 ### Evaluation
 
 A trained TNet model can be evaluated on the training and validation sets, by using a command similar to the following example:
