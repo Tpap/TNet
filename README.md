@@ -119,16 +119,52 @@ All related files can be found under the /fMoW/ folder.
 
 ### Data preparation
 
-Detailed intstructions to download the raw data, and to create related metadata files, are provided in `create_tfrecords_imagenet.py`. Given the necessary files are created, and the data directories are organized appropriately, the following command can be used to convert raw data to TFRecords:
+Details about how to download raw data are provided in `create_TFRecords_fMoW.py`. As explained in `create_TFRecords_fMoW.py`, test set data should be manually matched to ground truth labels. This can be done with the following command:
 
 ```
-python create_tfrecords_imagenet.py --output_directory '/path/to/output/dir/'
-                                    --labels_file '/path/to/imagenet_lsvrc_2015_synsets.txt'
-                                    --imagenet_metadata_file '/path/to/imagenet_metadata.txt'
-                                    --bounding_box_file '/path/to/imagenet_2012_bounding_boxes.csv'
+python match_test_gt.py --root_test_dir '/path/to/original/test/data/root/dir/'
+                        --test_output_dir '/path/to/output/dir/'
+                        --match_gt_json_path '/path/to/test_gt_mapping.json'
+```
+
+Given the desired uniformity in the directory organization of the training, validation, and test sets is established, the following command can be used to convert raw data to TFRecords:
+
+```
+python create_TFRecords_fMoW.py --train_directory '/path/to/training/set/dir/'
+                                --validation_directory '/path/to/validation/set/dir/'
+                                --test_directory '/path/to/test/set/dir/'
+                                --output_directory '/path/to/output/dir/'
+```
+
+In order to crop images according to the provided bounding boxes, the following command can be used:
+
+```
+python crop_fMoW.py --train_directory '/path/to/training/set/dir/'
+                    --validation_directory '/path/to/validation/set/dir/'
+                    --test_directory '/path/to/test/set/dir/'
+                    --output_directory '/path/to/output/dir/'
+```
+
+TFRecords for cropped images can be created with the following command:
+
+```
+python create_TFRecords_fMoW.py --cropped_data
+                                --train_directory '/path/to/training/set/dir/'
+                                --validation_directory '/path/to/validation/set/dir/'
+                                --test_directory '/path/to/test/set/dir/'
+                                --output_directory '/path/to/output/dir/'
+                                --maximum_min_dim 224
 ```
 
 ### Training and evaluation
+
+Training and evaluation commands are similar to the ones provided for ImageNet. The commands used to train and evaluate the networks presented in the paper, can be found in `results_replication.txt`.
+
+The weights of the TNet model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=11xk3DqB_966XPZSGThTr6h-Rbm4sRGjJ&export=download). <br />
+The weights of the EfficientNet-B0 model trained on cropped images, can be downloaded [here](https://drive.google.com/u/1/uc?id=120ek3sPJP8yKfD9EFf7qlV6siz5GVW5a&export=download). <br />
+The weights of the EfficientNet-B0 model trained on images of size 224x224, can be downloaded [here](https://drive.google.com/u/1/uc?id=120ek3sPJP8yKfD9EFf7qlV6siz5GVW5a&export=download). <br />
+The weights of the EfficientNet-B0 model trained on images of size 448x448, can be downloaded [here](https://drive.google.com/u/1/uc?id=120ek3sPJP8yKfD9EFf7qlV6siz5GVW5a&export=download). <br />
+The weights of the EfficientNet-B0 model trained on images of size 896x896, can be downloaded [here](https://drive.google.com/u/1/uc?id=120ek3sPJP8yKfD9EFf7qlV6siz5GVW5a&export=download).
 
 ## CUB-200-2011
 
