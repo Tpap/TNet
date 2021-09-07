@@ -161,7 +161,7 @@ python create_TFRecords_fMoW.py --cropped_data
 Training and evaluation commands are similar to the ones provided for ImageNet. The commands used to train and evaluate the networks presented in the paper, can be found in `results_replication.txt`.
 
 The weights of the TNet model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=11xk3DqB_966XPZSGThTr6h-Rbm4sRGjJ&export=download). <br />
-The weights of the EfficientNet-B0 model trained on cropped images, can be downloaded [here](https://drive.google.com/u/1/uc?id=120ek3sPJP8yKfD9EFf7qlV6siz5GVW5a&export=download). <br />
+The weights of the EfficientNet-B0 model trained on cropped images, can be downloaded [here](https://drive.google.com/u/1/uc?id=12RzU8hNHbOi3NCzoTWrceYkpclBy9IJN&export=download). <br />
 The weights of the EfficientNet-B0 model trained on images of size 224x224, can be downloaded [here](https://drive.google.com/u/1/uc?id=120ek3sPJP8yKfD9EFf7qlV6siz5GVW5a&export=download). <br />
 The weights of the EfficientNet-B0 model trained on images of size 448x448, can be downloaded [here](https://drive.google.com/u/1/uc?id=120ek3sPJP8yKfD9EFf7qlV6siz5GVW5a&export=download). <br />
 The weights of the EfficientNet-B0 model trained on images of size 896x896, can be downloaded [here](https://drive.google.com/u/1/uc?id=120ek3sPJP8yKfD9EFf7qlV6siz5GVW5a&export=download).
