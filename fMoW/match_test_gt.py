@@ -46,10 +46,6 @@ import shutil
 
 
 
-
-
-# python match_test_gt.py --root_test_dir '/' --test_output_dir '/scratch/ap4094/fMoW_testing/fMoW-rgb/test_matched_with_gt/' --match_gt_json_path '/scratch/ap4094/fMoW_testing/fMoW-rgb/test_gt_mapping.json'
-
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--root_test_dir', type=str, default='/fMoW-rgb/', help='Root directory of the original test data.')

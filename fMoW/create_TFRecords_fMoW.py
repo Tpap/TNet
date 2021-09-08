@@ -36,9 +36,10 @@ for the test set, in the following directory structure:
     /test_matched_with_gt/airport/airport_0/airport_0_0_rgb.json
     ...
 
-Given the established uniformity in the directory organization of the training,
-validation, and test sets, the current script converts image data into TFRecord
-files. Each record within a TFRecord file is a serialized Example proto.
+Given the desired uniformity in the directory organization of the training,
+validation, and test sets is established, the current script converts image
+data to TFRecord files. Each record within a TFRecord file is a serialized
+Example proto.
 """
 
 from __future__ import absolute_import, division, print_function
@@ -55,15 +56,7 @@ import numpy as np
 import six
 import tensorflow as tf
 
-# python create_TFRecords_fMoW.py --cropped_data --test_directory '/scratch/ap4094/fMoW_testing/fMoW-rgb/data_cropped/test/' --output_directory '/scratch/ap4094/fMoW_testing/fMoW-rgb/data_cropped/TFRecords_224/' --maximum_min_dim 224
 
-# python create_TFRecords_fMoW.py
-# python create_TFRecords_fMoW.py --cropped_data --train_directory '/train' --validation_directory '/val' --test_directory '/test' --output_directory '/scratch/ap4094/datasets/fMoW/data/TFRecords_cropped'
-# python create_TFRecords_fMoW.py --output_directory '/scratch/ap4094/datasets/fMoW/data/TFRecords_275' --maximum_min_dim 275
-# python create_TFRecords_fMoW.py --output_directory '/scratch/ap4094/datasets/fMoW/data/TFRecords_896' --maximum_min_dim 896
-
-# singularity exec --overlay /home/ap4094/venvs/tf2_gpu.ext3:ro --overlay /scratch/ap4094/datasets/fMoW/data/raw-data/fMoW-rgb/data_cropped/val.sqf:ro --overlay /scratch/ap4094/datasets/fMoW/data/raw-data/fMoW-rgb/data_cropped/train.sqf:ro --overlay /scratch/ap4094/datasets/fMoW/data/raw-data/fMoW-rgb/data_cropped/test.sqf:ro /scratch/work/public/singularity/cuda10.1-cudnn7-devel-ubuntu18.04.sif /bin/bash
-# singularity exec --overlay /home/ap4094/venvs/tf2_gpu.ext3:ro --overlay /scratch/ap4094/datasets/fMoW/data/raw-data/fMoW-rgb/val.sqf:ro --overlay /scratch/ap4094/datasets/fMoW/data/raw-data/fMoW-rgb/train.sqf:ro --overlay /scratch/ap4094/datasets/fMoW/data/raw-data/fMoW-rgb/test_matched_with_gt.sqf:ro /scratch/work/public/singularity/cuda10.1-cudnn7-devel-ubuntu18.04.sif /bin/bash
 
 parser = argparse.ArgumentParser()
 

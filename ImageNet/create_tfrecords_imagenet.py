@@ -41,7 +41,6 @@ import numpy as np
 import tensorflow as tf
 
 
-# python create_tfrecords_imagenet.py --output_directory /scratch/ap4094/TFRecords_2/ --labels_file '/scratch/ap4094/datasets/imagenet/data/imagenet_lsvrc_2015_synsets.txt' --imagenet_metadata_file '/scratch/ap4094/datasets/imagenet/data/imagenet_metadata.txt' --bounding_box_file '/scratch/ap4094/datasets/imagenet/data/imagenet_2012_bounding_boxes.csv'
 
 parser = argparse.ArgumentParser()
 
@@ -92,7 +91,6 @@ parser.add_argument('--imagenet_metadata_file', type=str, default='/imagenet_met
 parser.add_argument('--bounding_box_file', type=str, default='/imagenet_2012_bounding_boxes.csv', help='File with list of bounding boxes.')
 
 FLAGS = parser.parse_args()
-
 
 def _int64_feature(value):
     """Insert int features into Example proto.

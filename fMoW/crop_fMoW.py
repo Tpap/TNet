@@ -18,18 +18,14 @@ import numpy as np
 import six
 import tensorflow as tf
 
-# python crop_fMoW.py --test_directory '/scratch/ap4094/fMoW_testing/fMoW-rgb/test_matched_with_gt/' --output_directory '/scratch/ap4094/fMoW_testing/fMoW-rgb/data_cropped/' --num_threads 48
 
-# mksquashfs /state/partition1/tmp_ap4094/data_cropped/val/ /scratch/ap4094/datasets/fMoW/data/raw-data/fMoW-rgb/data_cropped/val.sqf -keep-as-directory
-# mksquashfs /state/partition1/tmp_ap4094/data_cropped/test/ /scratch/ap4094/datasets/fMoW/data/raw-data/fMoW-rgb/data_cropped/test.sqf -keep-as-directory
-# mksquashfs /state/partition1/tmp_ap4094/data_cropped/train/ /scratch/ap4094/datasets/fMoW/data/raw-data/fMoW-rgb/data_cropped/train.sqf -keep-as-directory
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--train_directory', type=str, default='/train/', help='Training data directory.')
 parser.add_argument('--validation_directory', type=str, default='/val/', help='Validation data directory.')
 parser.add_argument('--test_directory', type=str, default='/test_matched_with_gt/', help='Test data directory.')
-parser.add_argument('--output_directory', type=str, default='/data_cropped', help='Output data directory.')
+parser.add_argument('--output_directory', type=str, default='/data_cropped/', help='Output data directory.')
 parser.add_argument('--num_threads', type=int, default=16, help='Number of threads to parallelize processing.')
 
 FLAGS = parser.parse_args()

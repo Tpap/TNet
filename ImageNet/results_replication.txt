@@ -1,0 +1,49 @@
+--- Training
+
+- TNet
+
+The following command can be used to replicate the training of the TNet model reported in the paper:
+
+python train.py --to_train --to_evaluate_train --to_evaluate_val --batch_size 64 --num_classes 1000 --num_epochs 200 --initial_lr 0.0001 --lr_scedule_1step --lr_decay_factor 0.1 --keep_prob 0.5 --loc_per_grid 3.0 --reinfornce_reg_w 0.1 --perFReg_ce_weight 0.3 --perFReg_reinf_weight 0.3 --overlap 0.34375 --img_size_y 224 --img_size_x 224 --base_res_y 77 --base_res_x 77 --num_samples 1 --ls_dim 512 --num_patches_y 5 --num_patches_x 5 --num_res_levels 2 --num_do_layers 1 --descr_tag 'BagNet_77_TNet' --save_tag 'TNet_ImageNet' --num_gpus 4 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary
+
+
+
+- Baseline
+
+The following command can be used to replicate the training of the BagNet-77 baseline model reported in the paper:
+
+python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_size 64 --num_classes 1000 --num_epochs 200 --initial_lr 0.0001 --lr_scedule_1step --lr_decay_factor 0.1 --keep_prob 0.375 --ls_dim 512 --num_do_layers 1 --img_size_y 224 --img_size_x 224 --descr_tag 'BagNet_77' --save_tag 'BagNet_77_ImageNet' --num_gpus 4 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary
+
+
+
+
+
+--- Evaluation
+
+- TNet
+
+The following command can be used to evaluate a trained TNet model on the validation set of ImageNet:
+
+python train.py --to_evaluate_val --batch_size 64 --num_classes 1000 --loc_per_grid 3.0 --overlap 0.34375 --img_size_y 224 --img_size_x 224 --ls_dim 512 --num_patches_y 5 --num_patches_x 5 --base_res_y 77 --base_res_x 77 --num_res_levels 2 --descr_tag 'BagNet_77_TNet' --save_tag 'TNet_ImageNet' --num_gpus 1 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+
+The following command can be used to time the inference of TNet:
+
+python train.py --profile_step 10. --batches_to_time_range 50 501 --eval_epochs_num 1 --to_evaluate_val --batch_size 64 --num_classes 1000 --loc_per_grid 3.0 --overlap 0.34375 --img_size_y 224 --img_size_x 224 --ls_dim 512 --num_patches_y 5 --num_patches_x 5 --base_res_y 77 --base_res_x 77 --num_res_levels 2 --descr_tag 'BagNet_77_TNet' --save_tag 'TNet_ImageNet' --num_gpus 1 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+
+The following command can be used for advanced evaluation of TNet:
+
+python train.py --adv_eval_data --batches_to_time_range 0 -1 --eval_epochs_num 1 --to_evaluate_val --batch_size 64 --num_classes 1000 --loc_per_grid 3.0 --overlap 0.34375 --img_size_y 224 --img_size_x 224 --ls_dim 512 --num_patches_y 5 --num_patches_x 5 --base_res_y 77 --base_res_x 77 --num_res_levels 2 --descr_tag 'BagNet_77_TNet' --save_tag 'TNet_ImageNet' --num_gpus 1 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/' --labels_file '/path/to/imagenet_lsvrc_2015_synsets.txt' --imagenet_metadata_file '/path/to/imagenet_metadata.txt'
+
+
+
+- Baseline
+
+The following command can be used to evaluate a trained BagNet-77 model on the validation set of ImageNet:
+
+python train_bl.py --to_evaluate_val --batch_size 64 --num_classes 1000 --ls_dim 512 --img_size_y 224 --img_size_x 224 --descr_tag 'BagNet_77' --save_tag 'BagNet_77_ImageNet' --num_gpus 1 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+
+The following command can be used to time the inference of BagNet-77:
+
+python train_bl.py --profile_step 10. --batches_to_time_range 50 501 --eval_epochs_num 1 --to_evaluate_val --batch_size 64 --num_classes 1000 --ls_dim 512 --img_size_y 224 --img_size_x 224 --descr_tag 'BagNet_77' --save_tag 'BagNet_77_ImageNet' --num_gpus 1 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+
+
