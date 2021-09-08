@@ -119,15 +119,15 @@ All related files can be found under the /fMoW/ folder.
 
 ### Data preparation
 
-The link to download raw data is provided in `create_tfrecords_cub.py`. Before the creation of TFRecords, data can be split to training and validation sets through the following command (a csv file for each split is created):
+Details about how to download raw data are provided in `create_TFRecords_fMoW.py`. As explained in `create_TFRecords_fMoW.py`, test set data should be manually matched to ground truth labels. This can be done with the following command:
 
 ```
-python create_csv_cub.py --imgs_list_txt '/path/to/images.txt'
-                         --split_list_txt '/path/to/train_test_split.txt'
-                         --save_dir '/path/to/output/dir/'
+python match_test_gt.py --root_test_dir '/path/to/original/test/data/root/dir/'
+                        --test_output_dir '/path/to/output/dir/'
+                        --match_gt_json_path '/path/to/test_gt_mapping.json'
 ```
 
-Given the csv files for each data split are created, the following command can be used to convert raw data to TFRecords:
+Given the desired uniformity in the directory organization of the training, validation, and test sets is established, the following command can be used to convert raw data to TFRecords:
 
 ```
 python create_TFRecords_fMoW.py --train_directory '/path/to/training/set/dir/'
@@ -172,7 +172,22 @@ All related files can be found under the /CUB/ folder.
 
 ### Data preparation
 
-Follow instructions
+The link to download raw data is provided in `create_tfrecords_cub.py`. Before the creation of TFRecords, data can be split into training and validation sets through the following command (a csv file for each split is created):
+
+```
+python create_csv_cub.py --imgs_list_txt '/path/to/images.txt'
+                         --split_list_txt '/path/to/train_test_split.txt'
+                         --save_dir '/path/to/output/dir/'
+```
+
+Given the csv files for each data split are created, the following command can be used to convert raw data to TFRecords:
+
+```
+python create_tfrecords_cub.py --img_dir '/path/to/images/dir/'
+                               --train_csv_path '/path/to/train_anno.csv'
+                               --dev_csv_path '/path/to/validation_anno.csv'
+                               --output_dir '/path/to/output/dir/'
+```
 
 ### Training and evaluation
 
