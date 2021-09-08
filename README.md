@@ -115,7 +115,7 @@ Commands to evaluate the networks presented in the paper, can be found in `resul
 
 ## Functional Map of the World (fMoW)
 
-All related files can be found under the /fMoW/ folder.
+All related files can be found under the `/fMoW/` folder.
 
 ### Data preparation
 
@@ -168,7 +168,7 @@ The weights of the EfficientNet-B0 model trained on images of size 896x896 px, c
 
 ## CUB-200-2011
 
-All related files can be found under the /CUB/ folder.
+All related files can be found under the `/CUB/` folder.
 
 ### Data preparation
 
@@ -206,7 +206,7 @@ The weights of the EfficientNet-B4 baseline model reported in the paper, can be 
 
 ## NABirds
 
-All related files can be found under the /NABirds/ folder.
+All related files can be found under the `/NABirds/` folder.
 
 ### Data preparation
 
