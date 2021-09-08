@@ -42,7 +42,7 @@ python train.py --to_train
                 --descr_tag 'BagNet_77_TNet'
                 --save_tag 'TNet_imagenet'
                 --num_gpus 2
-                --data_dir '/path/to/TFRecords/dir'
+                --data_dir '/path/to/TFRecords/dir/'
                 --ckpt_dir '/path/to/ckpts/dir/'
                 --summaries_dir '/path/to/summaries/dir/'
                 --keep_weights_summary
@@ -61,7 +61,7 @@ python train_bl.py --to_train
                    --descr_tag 'BagNet_77'
                    --save_tag 'BagNet_77_imagenet'
                    --num_gpus 2
-                   --data_dir '/path/to/TFRecords/dir'
+                   --data_dir '/path/to/TFRecords/dir/'
                    --ckpt_dir '/path/to/ckpts/dir/'
                    --summaries_dir '/path/to/summaries/dir/'
                    --keep_weights_summary
@@ -90,7 +90,7 @@ python train.py --to_evaluate_train
                 --descr_tag 'BagNet_77_TNet'
                 --save_tag 'BagNet_77_imagenet'
                 --num_gpus 1
-                --data_dir '/path/to/TFRecords/dir'
+                --data_dir '/path/to/TFRecords/dir/'
                 --ckpt_dir '/path/to/ckpts/dir/'
                 --summaries_dir '/path/to/summaries/dir/'
                 --restore_dir '/path/to/dir/with/ckpt/to/restore/'
@@ -105,7 +105,7 @@ python train_bl.py --to_evaluate_train
                    --descr_tag 'BagNet_77'
                    --save_tag 'BagNet_77_imagenet'
                    --num_gpus 1
-                   --data_dir '/path/to/TFRecords/dir'
+                   --data_dir '/path/to/TFRecords/dir/'
                    --ckpt_dir '/path/to/ckpts/dir/'
                    --summaries_dir '/path/to/summaries/dir/'
                    --restore_dir '/path/to/dir/with/ckpt/to/restore/'
@@ -193,16 +193,16 @@ python create_tfrecords_cub.py --img_dir '/path/to/images/dir/'
 
 Training and evaluation commands are similar to the ones provided for ImageNet. As noted in the paper, the pre-trained weights for EfficientNet models that are used for fine-tuning, can be downloaded <a href="https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet">here</a>. They correspond to the weights of models trained with NoisyStuden and RandAugment, with the extra JFT-300M unlabeled data. Under the folder `restore_dicts` are provided dictionaries for loading the pre-trained weights to TNet and the baselines. The commands used to train and evaluate the networks presented in the paper, can be found in `results_replication.txt`.
 
-The weights of the TNet-B0 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12WJCIZ0nBICEf4X1C8qNPt3kCYSNHmxa&export=download). <br />
-The weights of the TNet-B1 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12WJCIZ0nBICEf4X1C8qNPt3kCYSNHmxa&export=download). <br />
-The weights of the TNet-B2 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12WJCIZ0nBICEf4X1C8qNPt3kCYSNHmxa&export=download). <br />
-The weights of the TNet-B3 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12WJCIZ0nBICEf4X1C8qNPt3kCYSNHmxa&export=download). <br />
-The weights of the TNet-B4 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12WJCIZ0nBICEf4X1C8qNPt3kCYSNHmxa&export=download). <br />
-The weights of the EfficientNet-B0 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12RzU8hNHbOi3NCzoTWrceYkpclBy9IJN&export=download). <br />
-The weights of the EfficientNet-B1 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12RzU8hNHbOi3NCzoTWrceYkpclBy9IJN&export=download). <br />
-The weights of the EfficientNet-B2 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12RzU8hNHbOi3NCzoTWrceYkpclBy9IJN&export=download). <br />
-The weights of the EfficientNet-B3 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12RzU8hNHbOi3NCzoTWrceYkpclBy9IJN&export=download). <br />
-The weights of the EfficientNet-B4 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12RzU8hNHbOi3NCzoTWrceYkpclBy9IJN&export=download). <br />
+The weights of the TNet-B0 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=13vG6HS7GvV5I9HVsje67wSTUSdVqZ1c2&export=download). <br />
+The weights of the TNet-B1 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=144S8dBKi8NSUwfeejNi9ZhFpZiV34DDc&export=download). <br />
+The weights of the TNet-B2 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=146LIt0YAZBr0WAlYXyBymE2Ml3HlZION&export=download). <br />
+The weights of the TNet-B3 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=147xTMXINAEXyMcvqFkiajG7b3Kr-zmpn&export=download). <br />
+The weights of the TNet-B4 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=148P9fcajdNu_qvdz2Vz0makZE5z0TX5A&export=download). <br />
+The weights of the EfficientNet-B0 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=13p5fCpEHp1T6-jYjpwNrnTUm5PCYK3HF&export=download). <br />
+The weights of the EfficientNet-B1 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=13pvYgEskLkvGg1RLkkBZPLvCRoVV_0Jf&export=download). <br />
+The weights of the EfficientNet-B2 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=13vASt7Cidwx6YytTF0lUxNz-HtWawZpy&export=download). <br />
+The weights of the EfficientNet-B3 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14IG_vz8BbBzVRweytb-j3BQkbJW5fU3A&export=download). <br />
+The weights of the EfficientNet-B4 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14L8pQA7_C0As5Pj5oZz2n5ZHAvMJyPYS&export=download). <br />
 
 ## NABirds
 
