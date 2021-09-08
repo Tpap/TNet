@@ -119,15 +119,15 @@ All related files can be found under the /fMoW/ folder.
 
 ### Data preparation
 
-Details about how to download raw data are provided in `create_TFRecords_fMoW.py`. As explained in `create_TFRecords_fMoW.py`, test set data should be manually matched to ground truth labels. This can be done with the following command:
+The link to download raw data is provided in `create_tfrecords_cub.py`. Before the creation of TFRecords, data can be split to training and validation sets through the following command (a csv file for each split is created):
 
 ```
-python match_test_gt.py --root_test_dir '/path/to/original/test/data/root/dir/'
-                        --test_output_dir '/path/to/output/dir/'
-                        --match_gt_json_path '/path/to/test_gt_mapping.json'
+python create_csv_cub.py --imgs_list_txt '/path/to/images.txt'
+                         --split_list_txt '/path/to/train_test_split.txt'
+                         --save_dir '/path/to/output/dir/'
 ```
 
-Given the desired uniformity in the directory organization of the training, validation, and test sets is established, the following command can be used to convert raw data to TFRecords:
+Given the csv files for each data split are created, the following command can be used to convert raw data to TFRecords:
 
 ```
 python create_TFRecords_fMoW.py --train_directory '/path/to/training/set/dir/'
@@ -175,6 +175,19 @@ All related files can be found under the /CUB/ folder.
 Follow instructions
 
 ### Training and evaluation
+
+Training and evaluation commands are similar to the ones provided for ImageNet. The commands used to train and evaluate the networks presented in the paper, can be found in `results_replication.txt`.
+
+The weights of the TNet-B0 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12WJCIZ0nBICEf4X1C8qNPt3kCYSNHmxa&export=download). <br />
+The weights of the TNet-B1 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12WJCIZ0nBICEf4X1C8qNPt3kCYSNHmxa&export=download). <br />
+The weights of the TNet-B2 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12WJCIZ0nBICEf4X1C8qNPt3kCYSNHmxa&export=download). <br />
+The weights of the TNet-B3 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12WJCIZ0nBICEf4X1C8qNPt3kCYSNHmxa&export=download). <br />
+The weights of the TNet-B4 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12WJCIZ0nBICEf4X1C8qNPt3kCYSNHmxa&export=download). <br />
+The weights of the EfficientNet-B0 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12RzU8hNHbOi3NCzoTWrceYkpclBy9IJN&export=download). <br />
+The weights of the EfficientNet-B1 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12RzU8hNHbOi3NCzoTWrceYkpclBy9IJN&export=download). <br />
+The weights of the EfficientNet-B2 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12RzU8hNHbOi3NCzoTWrceYkpclBy9IJN&export=download). <br />
+The weights of the EfficientNet-B3 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12RzU8hNHbOi3NCzoTWrceYkpclBy9IJN&export=download). <br />
+The weights of the EfficientNet-B4 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12RzU8hNHbOi3NCzoTWrceYkpclBy9IJN&export=download). <br />
 
 ## NABirds
 
