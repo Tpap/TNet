@@ -228,8 +228,8 @@ The weights of the TNet-B2 model reported in the paper, can be downloaded [here]
 The weights of the TNet-B3 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14YDJUlB-DlpfompGXn6Lp_QQyU16e8IP&export=download). <br />
 The weights of the TNet-B4 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14YAnGLCoKlODvCnU9TgQHkz6F1pFJMj2&export=download). <br />
 The weights of the EfficientNet-B0 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14bpOMBfeeSugkjfcQuU5Edr8c_3HeCsI&export=download). <br />
-The weights of the EfficientNet-B1 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=13pvYgEskLkvGg1RLkkBZPLvCRoVV_0Jf&export=download). <br />
-The weights of the EfficientNet-B2 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=13vASt7Cidwx6YytTF0lUxNz-HtWawZpy&export=download). <br />
-The weights of the EfficientNet-B3 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14IG_vz8BbBzVRweytb-j3BQkbJW5fU3A&export=download). <br />
-The weights of the EfficientNet-B4 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14L8pQA7_C0As5Pj5oZz2n5ZHAvMJyPYS&export=download). <br />
+The weights of the EfficientNet-B1 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14cF2yJlY4CbSHkrb2bcsRzQx0AlScZip&export=download). <br />
+The weights of the EfficientNet-B2 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14efrtrX8gvQR9a3LIhVuTtI-k_s5nhAd&export=download). <br />
+The weights of the EfficientNet-B3 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14h1pJWkEKrV7uufYC4eEnMmCruADZDSA&export=download). <br />
+The weights of the EfficientNet-B4 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14nDTt88vBQHz4VbxAs0WzEHO0uI4snsE&export=download). <br />
 
