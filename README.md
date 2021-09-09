@@ -191,7 +191,7 @@ python create_tfrecords_cub.py --img_dir '/path/to/images/dir/'
 
 ### Training and evaluation
 
-Training and evaluation commands are similar to the ones provided for ImageNet. As noted in the paper, the pre-trained weights for EfficientNet models that are used for fine-tuning, can be downloaded <a href="https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet">here</a>. They correspond to the weights of models trained with NoisyStuden and RandAugment, with the extra JFT-300M unlabeled data. Under the folder `restore_dicts` are provided dictionaries for loading the pre-trained weights to TNet and the baselines. The commands used to train and evaluate the networks presented in the paper, can be found in `results_replication.txt`.
+Training and evaluation commands are similar to the ones provided for ImageNet. As noted in the paper, the pre-trained weights for EfficientNet models that are used for fine-tuning, can be downloaded <a href="https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet">here</a>. They correspond to the weights of models trained with NoisyStudent and RandAugment, with the extra JFT-300M unlabeled data. Under the folder `/restore_dicts/` are provided dictionaries that are used to load the pre-trained weights to TNet and the baselines. The commands used to train and evaluate the networks presented in the paper, can be found in `results_replication.txt`.
 
 The weights of the TNet-B0 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=13vG6HS7GvV5I9HVsje67wSTUSdVqZ1c2&export=download). <br />
 The weights of the TNet-B1 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=144S8dBKi8NSUwfeejNi9ZhFpZiV34DDc&export=download). <br />
@@ -210,7 +210,26 @@ All related files can be found under the `/NABirds/` folder.
 
 ### Data preparation
 
-Follow instructions
+Details about the NABirds data are provided in `create_tfrecords_nab.py`. The following command can be used to convert raw data to TFRecords:
+
+```
+python create_tfrecords_nab.py --root_directory '/path/to/dir/with/all/downloaded/data/'
+                               --data_directory '/path/to/images/dir/'
+                               --output_directory '/path/to/output/dir/'
+```
 
 ### Training and evaluation
+
+Training and evaluation commands are similar to the ones provided for ImageNet. As noted in the paper, the pre-trained weights for EfficientNet models that are used for fine-tuning, can be downloaded <a href="https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet">here</a>. They correspond to the weights of models trained with NoisyStudent and RandAugment, with the extra JFT-300M unlabeled data. Under the folder `/restore_dicts/` are provided dictionaries that are used to load the pre-trained weights to TNet and the baselines. The commands used to train and evaluate the networks presented in the paper, can be found in `results_replication.txt`.
+
+The weights of the TNet-B0 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14PNE7AlStP6ID1QJzft-6dguM3c7kBz_/&export=download). <br />
+The weights of the TNet-B1 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14UD3OSowZb3z97bcJlAm-VCjQAAQfroh&export=download). <br />
+The weights of the TNet-B2 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14bb7v6h_FaFnIRDt7Ibm2O8D1UBvABN2&export=download). <br />
+The weights of the TNet-B3 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14YDJUlB-DlpfompGXn6Lp_QQyU16e8IP&export=download). <br />
+The weights of the TNet-B4 model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14YAnGLCoKlODvCnU9TgQHkz6F1pFJMj2&export=download). <br />
+The weights of the EfficientNet-B0 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14bpOMBfeeSugkjfcQuU5Edr8c_3HeCsI&export=download). <br />
+The weights of the EfficientNet-B1 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=13pvYgEskLkvGg1RLkkBZPLvCRoVV_0Jf&export=download). <br />
+The weights of the EfficientNet-B2 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=13vASt7Cidwx6YytTF0lUxNz-HtWawZpy&export=download). <br />
+The weights of the EfficientNet-B3 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14IG_vz8BbBzVRweytb-j3BQkbJW5fU3A&export=download). <br />
+The weights of the EfficientNet-B4 baseline model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=14L8pQA7_C0As5Pj5oZz2n5ZHAvMJyPYS&export=download). <br />
 
