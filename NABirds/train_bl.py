@@ -16,68 +16,13 @@ import input_nab as tf_input
 import models_nab as tf_models
 from models_nab import adjust_var_name
 
-### The code to create dictianaries for --dictionary_to_restore_from, are at tf2_tnet_testing.ipynb in /beegfs/ap4094/jupyter_scripts_tf2/
-
-### test eval
-## gpu 1
-# python train_bl.py --to_evaluate_val --batch_norm --batch_size 64 --num_epochs 100 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --num_gpus 1 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB0_origWD' --save_tag 'bl_nab_en0_clean' --gpus_type 'Qrtx8' --data_dir '/scratch/ap4094/NABirds/TFRecords/' --ckpt_dir '/scratch/ap4094/results/ckpts/tnet_fG/nab/' --summaries_dir '/scratch/ap4094/results/summaries/tnet_fG/nab/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/scratch/ap4094/results/ckpts/tnet_fG/nab/bl_en0_BN_is448_Tdo0.75_bdo0.5_l2R1e4_lC50_0.4_2lr1e3_5e5_bs64_e100_noCdistort/latest/'
-# python train_bl.py --to_evaluate_val --batch_norm --batch_size 64 --num_epochs 100 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --num_gpus 1 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB2_origWD' --save_tag 'bl_nab_en2_clean' --gpus_type 'Qrtx8' --data_dir '/scratch/ap4094/NABirds/TFRecords/' --ckpt_dir '/scratch/ap4094/results/ckpts/tnet_fG/nab/' --summaries_dir '/scratch/ap4094/results/summaries/tnet_fG/nab/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/scratch/ap4094/results/ckpts/tnet_fG/nab/bl_en2_BN_is448_Tdo0.75_bdo0.5_l2R1e4_lC50_0.4_2lr1e3_5e5_bs64_e100_noCd/latest/'
-
-
-### test train
-## gpu 4
-# python train_bl.py --to_train --to_evaluate_val --to_evaluate_train --batch_norm --batch_size 64 --num_epochs 100 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --num_gpus 4 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB0_origWD' --save_tag 'bl_nab_en0_clean' --gpus_type 'Qrtx8' --data_dir '/scratch/ap4094/datasets/NABirds/data/TFRecords/' --ckpt_dir '/scratch/ap4094/results/ckpts/tnet_fG/nab/' --summaries_dir '/scratch/ap4094/results/summaries/tnet_fG/nab/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/scratch/ap4094/results/ckpts/efficientnets_pretrained/noisy-student-efficientnet-b0/' --dictionary_to_restore_from '/scratch/ap4094/results/ckpts/restore_dicts/efficientnet-b0.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' --contrastive_loss --l_contrastive 50.0 --contrastive_margin 0.4
-# python train_bl.py --to_train --to_evaluate_val --to_evaluate_train --batch_norm --batch_size 64 --num_epochs 100 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --num_gpus 4 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB2_origWD' --save_tag 'bl_nab_en2_clean' --gpus_type 'Qrtx8' --data_dir '/scratch/ap4094/datasets/NABirds/data/TFRecords/' --ckpt_dir '/scratch/ap4094/results/ckpts/tnet_fG/nab/' --summaries_dir '/scratch/ap4094/results/summaries/tnet_fG/nab/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/scratch/ap4094/results/ckpts/efficientnets_pretrained/noisy-student-efficientnet-b2/' --dictionary_to_restore_from '/scratch/ap4094/results/ckpts/restore_dicts/efficientnet-b2.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' --contrastive_loss --l_contrastive 50.0 --contrastive_margin 0.4
-## gpu 2
-# python train_bl.py --to_train --to_evaluate_val --to_evaluate_train --batch_norm --batch_size 64 --num_epochs 100 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --num_gpus 2 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB0_origWD' --save_tag 'bl_nab_en0_clean' --gpus_type 'Qrtx8' --data_dir '/scratch/ap4094/datasets/NABirds/data/TFRecords/' --ckpt_dir '/scratch/ap4094/results/ckpts/tnet_fG/nab/' --summaries_dir '/scratch/ap4094/results/summaries/tnet_fG/nab/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/scratch/ap4094/results/ckpts/efficientnets_pretrained/noisy-student-efficientnet-b0/' --dictionary_to_restore_from '/scratch/ap4094/results/ckpts/restore_dicts/efficientnet-b0.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' --contrastive_loss --l_contrastive 50.0 --contrastive_margin 0.4
-# python train_bl.py --to_train --to_evaluate_val --to_evaluate_train --batch_norm --batch_size 64 --num_epochs 100 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --num_gpus 2 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB2_origWD' --save_tag 'bl_nab_en2_clean' --gpus_type 'Qrtx8' --data_dir '/scratch/ap4094/datasets/NABirds/data/TFRecords/' --ckpt_dir '/scratch/ap4094/results/ckpts/tnet_fG/nab/' --summaries_dir '/scratch/ap4094/results/summaries/tnet_fG/nab/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/scratch/ap4094/results/ckpts/efficientnets_pretrained/noisy-student-efficientnet-b2/' --dictionary_to_restore_from '/scratch/ap4094/results/ckpts/restore_dicts/efficientnet-b2.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' --contrastive_loss --l_contrastive 50.0 --contrastive_margin 0.4
-
-### profile
-# python train_bl.py --profile_step 10. --batches_to_time_range 50 81 --to_evaluate_val --batch_norm --batch_size 64 --num_epochs 200 --num_classes 200 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --num_gpus 1 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB0_origWD' --save_tag 'bl_cub_en0_BN_is448_Tdo0.75_bdo0.5_l2R1e4_lC100_0.4_2lr1e3_5e5_bs64_e200' --gpus_type 'Qrtx8' --data_dir '/scratch/ap4094/datasets/caltech_UCSD_Birds_200_2011/data/CUB_200_2011/TFRecords/' --ckpt_dir '/scratch/ap4094/results/ckpts/tnet_fG/cub/' --summaries_dir '/scratch/ap4094/results/summaries/tnet_fG/cub/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/scratch/ap4094/results/ckpts/tnet_fG/cub/bl_cub_en0_BN_is448_Tdo0.75_bdo0.5_l2R1e4_lC100_0.4_2lr1e3_5e5_bs64_e200/latest/'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# python train_bl.py --to_train --to_evaluate_val --to_evaluate_train --batch_norm --batch_size 64 --num_epochs 100 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --num_gpus 4 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB0_origWD' --save_tag 'bl_en0_BN_is448_Tdo0.75_bdo0.5_l2R1e4_lC50_0.4_2lr1e3_5e5_bs64_e100_noCdistort' --gpus_type 'Qrtx8' --data_dir '/scratch/ap4094/datasets/NABirds/data/TFRecords/' --ckpt_dir '/scratch/ap4094/results/ckpts/tnet_fG/nab/' --summaries_dir '/scratch/ap4094/results/summaries/tnet_fG/nab/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/scratch/ap4094/results/ckpts/efficientnets_pretrained/noisy-student-efficientnet-b0/' --dictionary_to_restore_from '/scratch/ap4094/results/ckpts/restore_dicts/efficientnet-b0.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' --contrastive_loss 'cosine' --l_contrastive 50.0 --contrastive_margin 0.4 --no_color_distort
-
-# --restore_dir '/scratch/ap4094/results/ckpts/efficientnet-b0/' --dictionary_to_restore_from '/scratch/ap4094/results/ckpts/restore_dicts/efficientNetB0_in.p'
-# --restore_dir '/scratch/ap4094/results/ckpts/tnet_fG/cub//latest/'
-# --restore_dir '/scratch/ap4094/results/ckpts/tnet_fG/cub//sparse/'
-
-
-
-### test
-## gpu 4
-# python train_bl.py --to_train --to_evaluate_val --to_evaluate_train --batch_norm --batch_size 64 --num_epochs 100000 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.5 --block_drop_rate 0.3 --l2_reg 0.0001 --num_gpus 4 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB0_origWD' --save_tag 'test' --gpus_type 'Qrtx8' --data_dir '/scratch/ap4094/datasets/NABirds/data/TFRecords/' --ckpt_dir '/scratch/ap4094/results/ckpts/tnet_fG/nab/' --summaries_dir '/scratch/ap4094/results/summaries/tnet_fG/nab/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/scratch/ap4094/results/ckpts/efficientnets_pretrained/noisy-student-efficientnet-b0/' --dictionary_to_restore_from '/scratch/ap4094/results/ckpts/restore_dicts/efficientnet-b0.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' --contrastive_loss 'cosine' --l_contrastive 100.0 --contrastive_margin 0.4
-# python train_bl.py --to_train --to_evaluate_val --to_evaluate_train --batch_norm --batch_size 64 --num_epochs 100000 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.5 --block_drop_rate 0.3 --l2_reg 0.0001 --num_gpus 4 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB0_origWD' --save_tag 'test2' --gpus_type 'Qrtx8' --data_dir '/scratch/ap4094/datasets/NABirds/data/TFRecords/' --ckpt_dir '/scratch/ap4094/results/ckpts/tnet_fG/nab/' --summaries_dir '/scratch/ap4094/results/summaries/tnet_fG/nab/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/scratch/ap4094/results/ckpts/efficientnets_pretrained/noisy-student-efficientnet-b0/' --dictionary_to_restore_from '/scratch/ap4094/results/ckpts/restore_dicts/efficientnet-b0.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' --contrastive_loss 'cosine' --l_contrastive 100.0 --contrastive_margin 0.4
-# python train_bl.py --to_train --to_evaluate_val --to_evaluate_train --batch_norm --batch_size 64 --num_epochs 100000 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.5 --block_drop_rate 0.3 --l2_reg 0.0001 --num_gpus 4 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB0_origWD' --save_tag 'test3' --gpus_type 'Qrtx8' --data_dir '/scratch/ap4094/datasets/NABirds/data/TFRecords/' --ckpt_dir '/scratch/ap4094/results/ckpts/tnet_fG/nab/' --summaries_dir '/scratch/ap4094/results/summaries/tnet_fG/nab/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/scratch/ap4094/results/ckpts/efficientnets_pretrained/noisy-student-efficientnet-b0/' --dictionary_to_restore_from '/scratch/ap4094/results/ckpts/restore_dicts/efficientnet-b0.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' --contrastive_loss 'cosine' --l_contrastive 100.0 --contrastive_margin 0.4
-
-
 
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--batch_size', type=int, help='Global batch size (recommended to be divisible by the number of GPUs).')
 parser.add_argument('--num_epochs', type=int, default=100, help='Number of training epochs.')
-parser.add_argument('--num_classes', type=int, default=200, help='Number of classes.')
+parser.add_argument('--num_classes', type=int, default=555, help='Number of classes.')
 parser.add_argument('--initial_lr', type=float, default=0.0001, help='Initial learning rate.')
 parser.add_argument('--two_oprimizers', action='store_true', help='Whether to use differet optimizers for different sets of variables; used in fine-tuning.')
 parser.add_argument('--initial_lr2', type=float, help='Initial learning rate for a subset of trainable variables.')
@@ -132,8 +77,6 @@ parser.add_argument('--ckpt_sparse_num', type=int, default=10, help='How many ch
 parser.add_argument('--keep_grads_summary', action='store_true', help='Keep tf summary for the trainable weights gradients.')
 parser.add_argument('--keep_weights_summary', action='store_true', help='Keep tf summary for the model variables.')
 parser.add_argument('--keep_activations_summary', action='store_true', help='Keep tf summary for model activations.')
-
-
 
 FLAGS = parser.parse_args()
 
@@ -484,8 +427,13 @@ class distributedTrainer():
             v2 = v1 * FLAGS.lr_decay_factor
             values = [v1, v2]
         else:
-            print('Learning rate schedule undefined.')
-            return -1
+            # Learning rate drops once
+            b1 = 0.9 * train_steps
+            boundaries = [b1]
+            v1 = init_lr
+            v2 = v1 * FLAGS.lr_decay_factor
+            values = [v1, v2]
+        
         lr = tf.keras.optimizers.schedules.PiecewiseConstantDecay(boundaries, values)
 
         return lr

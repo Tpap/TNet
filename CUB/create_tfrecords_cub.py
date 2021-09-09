@@ -24,8 +24,6 @@ import tensorflow as tf
 
 
 
-# python create_tfrecords_cub.py --img_dir '/scratch/ap4094/datasets/caltech_UCSD_Birds_200_2011/data/CUB_200_2011/images/' --train_csv_path '/scratch/ap4094/CUB/train_anno.csv' --dev_csv_path '/scratch/ap4094/CUB/validation_anno.csv' --output_dir '/scratch/ap4094/CUB/TFRecords/'
-
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--img_dir', type=str, default='/CUB_200_2011/images/', help='Directory with raw image data.')

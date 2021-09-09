@@ -67,8 +67,6 @@ import tensorflow as tf
 
 
 
-# python create_tfrecords_nab.py --root_directory '/scratch/ap4094/datasets/NABirds/data/raw_data/' --data_directory '/scratch/ap4094/datasets/NABirds/data/raw_data/images/' --output_directory '/scratch/ap4094/NABirds/TFRecords/'
-
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--data_directory', type=str, default='/images/', help='Directory with raw image data.')
@@ -447,7 +445,7 @@ def main(argv=None):
     assert not FLAGS.train_shards % FLAGS.num_threads, ('Please make the FLAGS.num_threads commensurate with FLAGS.train_shards_num')
     assert not FLAGS.validation_shards % FLAGS.num_threads, ('Please make the FLAGS.num_threads commensurate with FLAGS.dev_shards_num')
 
-    if not os.path.isdir(FLAGS.output_directory):
+    if (not os.path.isdir(FLAGS.output_directory)):
         os.makedirs(FLAGS.output_directory)
     print('Saving results to %s' % FLAGS.output_directory)
     sys.stdout.flush()

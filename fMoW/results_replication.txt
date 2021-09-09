@@ -4,11 +4,11 @@
 
 The TNet model reported in the paper is trained in two steps; first TNet is trained on images of size 448x448 px, and then it is fine-tuned on images of size 896x896 px. The first step can be replicated with the following command:
 
-python train.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 64 --num_classes 62 --num_epochs 40 --initial_lr 0.001 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.5 --block_drop_rate 0.3 --loc_per_grid 2.0 --reinfornce_reg_w 0.1 --perFReg_ce_weight 0.2 --perFReg_reinf_weight 0.2 --overlap 0.5 --img_size_y 448 --img_size_x 448 --pos_dim_divisor 4 --num_samples 1 --num_patches_y 3 --num_patches_x 3 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 2 --descr_tag 'EfficientNet_lg3x3' --save_tag 'TNet_fMoW_448' --num_gpus 4 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary
+python train.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 64 --num_classes 62 --num_epochs 40 --initial_lr 0.001 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.5 --block_drop_rate 0.3 --loc_per_grid 2.0 --reinfornce_reg_w 0.1 --perFReg_ce_weight 0.2 --perFReg_reinf_weight 0.2 --overlap 0.5 --img_size_y 448 --img_size_x 448 --pos_dim_divisor 4 --num_samples 1 --num_patches_y 3 --num_patches_x 3 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 2 --descr_tag 'EfficientNet_lg3x3' --save_tag 'TNet_fMoW_448' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary
 
 The second step can be replicated with the following command:
 
-python train.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 64 --num_classes 62 --num_epochs 10 --initial_lr 0.001 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.5 --block_drop_rate 0.5 --loc_per_grid 2.0 1.0 --reinfornce_reg_w 0.1 --perFReg_ce_weight 0.05 --perFReg_reinf_weight 0.05 --overlap 0.5 --img_size_y 896 --img_size_x 896 --pos_dim_divisor 4 --num_samples 1 --num_patches_y 3 --num_patches_x 3 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 3 --perFReg_cap 2 --descr_tag 'EfficientNet_lg3x3' --save_tag 'TNet_fMoW' --num_gpus 4 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+python train.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 64 --num_classes 62 --num_epochs 10 --initial_lr 0.001 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.5 --block_drop_rate 0.5 --loc_per_grid 2.0 1.0 --reinfornce_reg_w 0.1 --perFReg_ce_weight 0.05 --perFReg_reinf_weight 0.05 --overlap 0.5 --img_size_y 896 --img_size_x 896 --pos_dim_divisor 4 --num_samples 1 --num_patches_y 3 --num_patches_x 3 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 3 --perFReg_cap 2 --descr_tag 'EfficientNet_lg3x3' --save_tag 'TNet_fMoW' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/path/to/dir/with/ckpt/to/restore/'
 
 
 
@@ -16,11 +16,11 @@ python train.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --
 
 The following command can be used to replicate the training of the EfficientNet-B0 model on the cropped images:
 
-python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 64 --num_epochs 65 --initial_lr 0.001 --lr_scedule_1step --lr_decay_factor 0.1 --l2_reg 0.00001 --dropout_rate 0.75 --block_drop_rate 0.5 --img_size_y 224 --img_size_x 224 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet' --save_tag 'bl_fMoW_cropped' --num_gpus 4 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary
+python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 64 --num_epochs 65 --initial_lr 0.001 --lr_scedule_1step --lr_decay_factor 0.1 --l2_reg 0.00001 --dropout_rate 0.75 --block_drop_rate 0.5 --img_size_y 224 --img_size_x 224 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet' --save_tag 'bl_fMoW_cropped' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary
 
 The following command can be used to replicate the training of the EfficientNet-B0 model on images of size 224x224 px:
 
-python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 64 --num_epochs 60 --initial_lr 0.001 --lr_scedule_1step --lr_decay_factor 0.1 --l2_reg 0.00001 --dropout_rate 0.75 --block_drop_rate 0.5 --img_size_y 224 --img_size_x 224 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet' --save_tag 'bl_fMoW_224' --num_gpus 4 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary
+python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 64 --num_epochs 60 --initial_lr 0.001 --lr_scedule_1step --lr_decay_factor 0.1 --l2_reg 0.00001 --dropout_rate 0.75 --block_drop_rate 0.5 --img_size_y 224 --img_size_x 224 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet' --save_tag 'bl_fMoW_224' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary
 
 Since this model is trained on images of relatively small size, for purposes of training efficiency, we used TFRecords created with the following command (for the other models we use TFRecords which are created as described in the README.md of our repository):
 
@@ -28,11 +28,11 @@ python create_TFRecords_fMoW.py --train_directory '/path/to/training/set/dir/' -
 
 The following command can be used to replicate the training of the EfficientNet-B0 model on images of size 448x448 px:
 
-python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 32 --num_epochs 30 --initial_lr 0.001 --lr_scedule_1step --lr_decay_factor 0.1 --l2_reg 0.00001 --dropout_rate 0.75 --block_drop_rate 0.3 --img_size_y 448 --img_size_x 448 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet' --save_tag 'bl_fMoW_448' --num_gpus 4 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary
+python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 32 --num_epochs 30 --initial_lr 0.001 --lr_scedule_1step --lr_decay_factor 0.1 --l2_reg 0.00001 --dropout_rate 0.75 --block_drop_rate 0.3 --img_size_y 448 --img_size_x 448 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet' --save_tag 'bl_fMoW_448' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary
 
 The following command can be used to replicate the training of the EfficientNet-B0 model on images of size 896x896 px:
 
-python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 32 --num_epochs 30 --initial_lr 0.001 --lr_scedule_1step --lr_decay_factor 0.1 --l2_reg 0.00001 --dropout_rate 0.3 --block_drop_rate 0.2 --img_size_y 896 --img_size_x 896 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet' --save_tag 'bl_fMoW_896' --num_gpus 4 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary
+python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 32 --num_epochs 30 --initial_lr 0.001 --lr_scedule_1step --lr_decay_factor 0.1 --l2_reg 0.00001 --dropout_rate 0.3 --block_drop_rate 0.2 --img_size_y 896 --img_size_x 896 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet' --save_tag 'bl_fMoW_896' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary
 
 
 
@@ -44,11 +44,11 @@ python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm
 
 The following command can be used to evaluate a trained TNet model on the test set of fMoW, with 2 processing levels (images of size 448x448 px) and 2 attended locations:
 
-python train.py --to_evaluate_test --batch_norm --batch_size 64 --num_classes 62 --loc_per_grid 2.0 --overlap 0.5 --img_size_y 448 --img_size_x 448 --pos_dim_divisor 4 --num_patches_y 3 --num_patches_x 3 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 2 --descr_tag 'EfficientNet_lg3x3' --save_tag 'TNet_fMoW_448' --num_gpus 1 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+python train.py --to_evaluate_test --batch_norm --batch_size 64 --num_classes 62 --loc_per_grid 2.0 --overlap 0.5 --img_size_y 448 --img_size_x 448 --pos_dim_divisor 4 --num_patches_y 3 --num_patches_x 3 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 2 --descr_tag 'EfficientNet_lg3x3' --save_tag 'TNet_fMoW_448' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
 
 The following command can be used to evaluate a trained TNet model on the test set of fMoW, with 3 processing levels (images of size 896x896 px) and 4 attended locations:
 
-python train.py --to_evaluate_test --batch_norm --batch_size 64 --num_classes 62 --loc_per_grid 2.0 1.0 --overlap 0.5 --img_size_y 896 --img_size_x 896 --pos_dim_divisor 4 --num_patches_y 3 --num_patches_x 3 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 3 --descr_tag 'EfficientNet_lg3x3' --save_tag 'TNet_fMoW' --num_gpus 1 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+python train.py --to_evaluate_test --batch_norm --batch_size 64 --num_classes 62 --loc_per_grid 2.0 1.0 --overlap 0.5 --img_size_y 896 --img_size_x 896 --pos_dim_divisor 4 --num_patches_y 3 --num_patches_x 3 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 3 --descr_tag 'EfficientNet_lg3x3' --save_tag 'TNet_fMoW' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
 
 The following flags can be added to the previous evaluation commands in order to time the inference of TNet:
 
@@ -58,25 +58,27 @@ The following flags can be added to the previous evaluation commands for advance
 
 --adv_eval_data --batches_to_time_range 0 -1 --eval_epochs_num 1
 
+Advanced evaluation corresponds to the creation of an excel file with information about the attended locations and the attendance probabilities of all candidate locations.
+
 
 
 - Baselines
 
 The following command can be used to evaluate on the test set of fMoW, an EfficientNet-B0 model trained on cropped images of size 224x224 px:
 
-python train_bl.py --to_evaluate_test --batch_norm --batch_size 64 --img_size_y 224 --img_size_x 224 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet0' --save_tag 'bl_fMoW_cropped' --num_gpus 1 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+python train_bl.py --to_evaluate_test --batch_norm --batch_size 64 --img_size_y 224 --img_size_x 224 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet0' --save_tag 'bl_fMoW_cropped' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
 
 The following command can be used to evaluate on the test set of fMoW, an EfficientNet-B0 model trained on images of size 224x224 px:
 
-python train_bl.py --to_evaluate_test --batch_norm --batch_size 64 --img_size_y 224 --img_size_x 224 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet0' --save_tag 'bl_fMoW_224' --num_gpus 1 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+python train_bl.py --to_evaluate_test --batch_norm --batch_size 64 --img_size_y 224 --img_size_x 224 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet0' --save_tag 'bl_fMoW_224' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
 
 The following command can be used to evaluate on the test set of fMoW, an EfficientNet-B0 model trained on images of size 448x448 px:
 
-python train_bl.py --to_evaluate_test --batch_norm --batch_size 64 --img_size_y 448 --img_size_x 448 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet0' --save_tag 'bl_fMoW_448' --num_gpus 1 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+python train_bl.py --to_evaluate_test --batch_norm --batch_size 64 --img_size_y 448 --img_size_x 448 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet0' --save_tag 'bl_fMoW_448' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
 
 The following command can be used to evaluate on the test set of fMoW, an EfficientNet-B0 model trained on images of size 896x896 px:
 
-python train_bl.py --to_evaluate_test --batch_norm --batch_size 64 --img_size_y 896 --img_size_x 896 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet0' --save_tag 'bl_fMoW_896' --num_gpus 1 --data_dir '/path/to/TFRecords/dir' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+python train_bl.py --to_evaluate_test --batch_norm --batch_size 64 --img_size_y 896 --img_size_x 896 --width_coefficient 1.0 --depth_coefficient 1.0 --activation 'swish' --descr_tag 'EfficientNet0' --save_tag 'bl_fMoW_896' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
 
 The following flags can be added to the previous evaluation commands in order to time the inference of the baselines:
 

@@ -15,8 +15,6 @@ import pandas as pd
 
 
 
-# python create_csv_cub.py --imgs_list_txt '/scratch/ap4094/datasets/caltech_UCSD_Birds_200_2011/data/CUB_200_2011/images.txt' --split_list_txt '/scratch/ap4094/datasets/caltech_UCSD_Birds_200_2011/data/CUB_200_2011/train_test_split.txt' --save_dir '/scratch/ap4094/CUB/'
-
 parser = argparse.ArgumentParser()
 
 # This file (images.txt) contains the list of image file names, with each line corresponding to one image.
