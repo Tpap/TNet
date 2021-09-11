@@ -160,11 +160,11 @@ python create_TFRecords_fMoW.py --cropped_data
 
 Training and evaluation commands are similar to the ones provided for ImageNet. The commands used to train and evaluate the networks presented in the paper, can be found in `results_replication.txt`.
 
-The weights of the TNet model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=12WJCIZ0nBICEf4X1C8qNPt3kCYSNHmxa&export=download). <br />
-The weights of the EfficientNet-B0 model trained on cropped images, can be downloaded [here](https://drive.google.com/u/1/uc?id=12RzU8hNHbOi3NCzoTWrceYkpclBy9IJN&export=download). <br />
-The weights of the EfficientNet-B0 model trained on images of size 224x224 px, can be downloaded [here](https://drive.google.com/u/1/uc?id=12MxuuwyZ-WtQ9kBlX8u23uc9MeYQDNnR&export=download). <br />
-The weights of the EfficientNet-B0 model trained on images of size 448x448 px, can be downloaded [here](https://drive.google.com/u/1/uc?id=12Ob1oKW8LZePUZt2dI1Jsz4oWwNZeTFi&export=download). <br />
-The weights of the EfficientNet-B0 model trained on images of size 896x896 px, can be downloaded [here](https://drive.google.com/u/1/uc?id=12Q-gnz5ve1UvJBxaKp5mlP3LHk6ERPTn&export=download).
+The weights of the TNet model reported in the paper, can be downloaded [here](https://drive.google.com/u/1/uc?id=13d9qE1DOwm93pVrCUEPtBZZ3sQWZycXa&export=download). <br />
+The weights of the EfficientNet-B0 model trained on cropped images, can be downloaded [here](https://drive.google.com/u/1/uc?id=1BsY-3EphqSviOx_OMS_x0gEWL2tUpRn5&export=download). <br />
+The weights of the EfficientNet-B0 model trained on images of size 224x224 px, can be downloaded [here](https://drive.google.com/u/1/uc?id=15weVtPPnXv-H6wilP820TDAf_zNe3WQj&export=download). <br />
+The weights of the EfficientNet-B0 model trained on images of size 448x448 px, can be downloaded [here](https://drive.google.com/u/1/uc?id=1ZiJMOsNU4LLMdzenO3ITUI9HyhvLhlF7&export=download). <br />
+The weights of the EfficientNet-B0 model trained on images of size 896x896 px, can be downloaded [here](https://drive.google.com/u/1/uc?id=1l9n1EvQ1FkGu1U-C0IaQzVeGjCeP_t5D&export=download).
 
 ## CUB-200-2011
 
