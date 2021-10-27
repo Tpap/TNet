@@ -1,0 +1,115 @@
+--- Training
+
+- TNet
+
+The following command can be used to replicate the training of the TNet-B0 model:
+
+python train.py --to_train --to_evaluate_train --to_evaluate_val --feat_weighting --batch_norm --batch_size 64 --num_classes 555 --num_epochs 100 --initial_lr 0.001 --initial_lr2 0.0001 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --loc_per_grid 5.0 --reinfornce_reg_w 0.1 --perFReg_ce_weight 0.3 --perFReg_reinf_weight 0.3 --overlap 0.35 --img_size_y 448 --img_size_x 448 --pos_dim_divisor 4 --num_samples 1 --num_patches_y 5 --num_patches_x 5 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 2 --descr_tag 'EfficientNetB0_origWD' --save_tag 'TNet-B0_nab' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/path/to/pretrained/weights/' --dictionary_to_restore_from '/path/to/efficientnet-b0.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' 'feat_weighting' 'feature_posBurn' 'location_prediction' --contrastive_loss --l_contrastive 50.0 --contrastive_margin 0.4
+
+The following command can be used to replicate the training of the TNet-B1 model:
+
+python train.py --to_train --to_evaluate_train --to_evaluate_val --feat_weighting --batch_norm --batch_size 64 --num_classes 555 --num_epochs 100 --initial_lr 0.001 --initial_lr2 0.0001 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --loc_per_grid 5.0 --reinfornce_reg_w 0.1 --perFReg_ce_weight 0.3 --perFReg_reinf_weight 0.3 --overlap 0.35 --img_size_y 448 --img_size_x 448 --pos_dim_divisor 4 --num_samples 1 --num_patches_y 5 --num_patches_x 5 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 2 --descr_tag 'EfficientNetB1_origWD' --save_tag 'TNet-B1_nab' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/path/to/pretrained/weights/' --dictionary_to_restore_from '/path/to/efficientnet-b1.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' 'feat_weighting' 'feature_posBurn' 'location_prediction' --contrastive_loss --l_contrastive 50.0 --contrastive_margin 0.4
+
+The following command can be used to replicate the training of the TNet-B2 model:
+
+python train.py --to_train --to_evaluate_train --to_evaluate_val --feat_weighting --batch_norm --batch_size 64 --num_classes 555 --num_epochs 100 --initial_lr 0.001 --initial_lr2 0.0001 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --loc_per_grid 5.0 --reinfornce_reg_w 0.1 --perFReg_ce_weight 0.3 --perFReg_reinf_weight 0.3 --overlap 0.35 --img_size_y 448 --img_size_x 448 --pos_dim_divisor 4 --num_samples 1 --num_patches_y 5 --num_patches_x 5 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 2 --descr_tag 'EfficientNetB2_origWD' --save_tag 'TNet-B2_nab' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/path/to/pretrained/weights/' --dictionary_to_restore_from '/path/to/efficientnet-b2.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' 'feat_weighting' 'feature_posBurn' 'location_prediction' --contrastive_loss --l_contrastive 50.0 --contrastive_margin 0.4
+
+The following command can be used to replicate the training of the TNet-B3 model:
+
+python train.py --to_train --to_evaluate_train --to_evaluate_val --feat_weighting --batch_norm --batch_size 64 --num_classes 555 --num_epochs 100 --initial_lr 0.001 --initial_lr2 0.0001 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --loc_per_grid 3.0 --reinfornce_reg_w 0.1 --perFReg_ce_weight 0.3 --perFReg_reinf_weight 0.3 --overlap 0.35 --img_size_y 448 --img_size_x 448 --pos_dim_divisor 4 --num_samples 1 --num_patches_y 5 --num_patches_x 5 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 2 --descr_tag 'EfficientNetB3_origWD' --save_tag 'TNet-B3_nab' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/path/to/pretrained/weights/' --dictionary_to_restore_from '/path/to/efficientnet-b3.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' 'feat_weighting' 'feature_posBurn' 'location_prediction' --contrastive_loss --l_contrastive 50.0 --contrastive_margin 0.4
+
+The following command can be used to replicate the training of the TNet-B4 model:
+
+python train.py --to_train --to_evaluate_train --to_evaluate_val --feat_weighting --batch_norm --batch_size 64 --num_classes 555 --num_epochs 100 --initial_lr 0.001 --initial_lr2 0.0001 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --loc_per_grid 3.0 --reinfornce_reg_w 0.1 --perFReg_ce_weight 0.3 --perFReg_reinf_weight 0.3 --overlap 0.35 --img_size_y 448 --img_size_x 448 --pos_dim_divisor 4 --num_samples 1 --num_patches_y 5 --num_patches_x 5 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 2 --descr_tag 'EfficientNetB4_origWD' --save_tag 'TNet-B4_nab' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/path/to/pretrained/weights/' --dictionary_to_restore_from '/path/to/efficientnet-b4.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' 'feat_weighting' 'feature_posBurn' 'location_prediction' --contrastive_loss --l_contrastive 50.0 --contrastive_margin 0.4
+
+
+
+- Baselines
+
+The following command can be used to replicate the training of the EfficientNet-B0 model:
+
+python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 64 --num_epochs 100 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB0_origWD' --save_tag 'EN-B0_nab' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/path/to/pretrained/weights/' --dictionary_to_restore_from '/path/to/efficientnet-b0.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' --contrastive_loss --l_contrastive 50.0 --contrastive_margin 0.4
+
+The following command can be used to replicate the training of the EfficientNet-B1 model:
+
+python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 64 --num_epochs 100 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB1_origWD' --save_tag 'EN-B1_nab' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/path/to/pretrained/weights/' --dictionary_to_restore_from '/path/to/efficientnet-b1.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' --contrastive_loss --l_contrastive 50.0 --contrastive_margin 0.4
+
+The following command can be used to replicate the training of the EfficientNet-B2 model:
+
+python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 64 --num_epochs 100 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB2_origWD' --save_tag 'EN-B2_nab' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/path/to/pretrained/weights/' --dictionary_to_restore_from '/path/to/efficientnet-b2.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' --contrastive_loss --l_contrastive 50.0 --contrastive_margin 0.4
+
+The following command can be used to replicate the training of the EfficientNet-B3 model:
+
+python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 64 --num_epochs 100 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB3_origWD' --save_tag 'EN-B3_nab' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/path/to/pretrained/weights/' --dictionary_to_restore_from '/path/to/efficientnet-b3.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' --contrastive_loss --l_contrastive 50.0 --contrastive_margin 0.4
+
+The following command can be used to replicate the training of the EfficientNet-B4 model:
+
+python train_bl.py --to_train --to_evaluate_train --to_evaluate_val --batch_norm --batch_size 64 --num_epochs 100 --num_classes 555 --initial_lr 0.001 --initial_lr2 0.00005 --lr_scedule_1step --lr_decay_factor 0.1 --dropout_rate 0.75 --block_drop_rate 0.5 --l2_reg 0.0001 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB4_origWD' --save_tag 'EN-B4_nab' --num_gpus 4 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --keep_grads_summary --keep_weights_summary --keep_activations_summary --restore_dir '/path/to/pretrained/weights/' --dictionary_to_restore_from '/path/to/efficientnet-b4.p' --vars_to_exclude 'logits_layer' --two_oprimizers --vars_to_update 'logits_layer' --contrastive_loss --l_contrastive 50.0 --contrastive_margin 0.4
+
+
+
+
+
+--- Evaluation
+
+- TNet
+
+The following command can be used to evaluate a trained TNet-B0 model on the validation set of CUB-200-2011:
+
+python train.py --to_evaluate_val --feat_weighting --batch_norm --batch_size 64 --num_classes 555 --loc_per_grid 3.0 --overlap 0.35 --img_size_y 448 --img_size_x 448 --pos_dim_divisor 4 --num_patches_y 5 --num_patches_x 5 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 2 --descr_tag 'EfficientNetB0_origWD' --save_tag 'TNet-B0_nab' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/' --image_ids_struct_path '/path/to/image_ids_struct.txt'
+
+The following command can be used to evaluate a trained TNet-B1 model on the validation set of CUB-200-2011:
+
+python train.py --to_evaluate_val --feat_weighting --batch_norm --batch_size 64 --num_classes 555 --loc_per_grid 3.0 --overlap 0.35 --img_size_y 448 --img_size_x 448 --pos_dim_divisor 4 --num_patches_y 5 --num_patches_x 5 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 2 --descr_tag 'EfficientNetB1_origWD' --save_tag 'TNet-B1_nab' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/' --image_ids_struct_path '/path/to/image_ids_struct.txt'
+
+The following command can be used to evaluate a trained TNet-B2 model on the validation set of CUB-200-2011:
+
+python train.py --to_evaluate_val --feat_weighting --batch_norm --batch_size 64 --num_classes 555 --loc_per_grid 3.0 --overlap 0.35 --img_size_y 448 --img_size_x 448 --pos_dim_divisor 4 --num_patches_y 5 --num_patches_x 5 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 2 --descr_tag 'EfficientNetB2_origWD' --save_tag 'TNet-B2_nab' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/' --image_ids_struct_path '/path/to/image_ids_struct.txt'
+
+The following command can be used to evaluate a trained TNet-B3 model on the validation set of CUB-200-2011:
+
+python train.py --to_evaluate_val --feat_weighting --batch_norm --batch_size 64 --num_classes 555 --loc_per_grid 3.0 --overlap 0.35 --img_size_y 448 --img_size_x 448 --pos_dim_divisor 4 --num_patches_y 5 --num_patches_x 5 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 2 --descr_tag 'EfficientNetB3_origWD' --save_tag 'TNet-B3_nab' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/' --image_ids_struct_path '/path/to/image_ids_struct.txt'
+
+The following command can be used to evaluate a trained TNet-B4 model on the validation set of CUB-200-2011:
+
+python train.py --to_evaluate_val --feat_weighting --batch_norm --batch_size 64 --num_classes 555 --loc_per_grid 3.0 --overlap 0.35 --img_size_y 448 --img_size_x 448 --pos_dim_divisor 4 --num_patches_y 5 --num_patches_x 5 --activation 'swish' --base_res_y 224 --base_res_x 224 --num_res_levels 2 --descr_tag 'EfficientNetB4_origWD' --save_tag 'TNet-B4_nab' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/' --image_ids_struct_path '/path/to/image_ids_struct.txt'
+
+The following flags can be added to the previous evaluation commands in order to time the inference of TNet:
+
+--profile_step 10. --batches_to_time_range 50 501 --eval_epochs_num 10
+
+The following flags can be added to the previous evaluation commands for advanced evaluation of TNet:
+
+--adv_eval_data --batches_to_time_range 0 -1 --eval_epochs_num 1
+
+Advanced evaluation corresponds to the creation of an excel file with information about the attended locations, the attendance probabilities of all candidate locations, and the weights estimated by the feature weighting module.
+
+
+
+- Baselines
+
+The following command can be used to evaluate a trained EfficientNet-B0 model on the validation set of CUB-200-2011:
+
+python train_bl.py --to_evaluate_val --batch_norm --batch_size 64 --num_classes 555 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB0_origWD' --save_tag 'EN-B0_nab' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+
+The following command can be used to evaluate a trained EfficientNet-B1 model on the validation set of CUB-200-2011:
+
+python train_bl.py --to_evaluate_val --batch_norm --batch_size 64 --num_classes 555 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB1_origWD' --save_tag 'EN-B1_nab' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+
+The following command can be used to evaluate a trained EfficientNet-B2 model on the validation set of CUB-200-2011:
+
+python train_bl.py --to_evaluate_val --batch_norm --batch_size 64 --num_classes 555 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB2_origWD' --save_tag 'EN-B2_nab' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+
+The following command can be used to evaluate a trained EfficientNet-B3 model on the validation set of CUB-200-2011:
+
+python train_bl.py --to_evaluate_val --batch_norm --batch_size 64 --num_classes 555 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB3_origWD' --save_tag 'EN-B3_nab' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+
+The following command can be used to evaluate a trained EfficientNet-B4 model on the validation set of CUB-200-2011:
+
+python train_bl.py --to_evaluate_val --batch_norm --batch_size 64 --num_classes 555 --img_size_y 448 --img_size_x 448 --activation 'swish' --descr_tag 'EfficientNetB4_origWD' --save_tag 'EN-B4_nab' --num_gpus 1 --data_dir '/path/to/TFRecords/dir/' --ckpt_dir '/path/to/ckpts/dir/' --summaries_dir '/path/to/summaries/dir/' --restore_dir '/path/to/dir/with/ckpt/to/restore/'
+
+The following flags can be added to the previous evaluation commands in order to time the inference of the baselines:
+
+--profile_step 10. --batches_to_time_range 50 501 --eval_epochs_num 10
+
+
