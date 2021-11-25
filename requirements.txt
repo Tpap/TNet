@@ -1,3 +1,4 @@
+python==3.7.11
 tensorflow==2.7.0
 tensorboard==2.7.0
 tensorboard-plugin-profile==2.5.0
