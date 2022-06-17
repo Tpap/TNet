@@ -1,4 +1,3 @@
-python
 tensorflow
 tensorflow-addons
 tensorboard
